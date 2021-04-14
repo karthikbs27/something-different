@@ -1,2 +1,2 @@
 # something-different
- its the html page  which is advanced and highly good looking website 
+ This is a website that has many animation and function. This website uses HTML, CSS and JavaScript. 

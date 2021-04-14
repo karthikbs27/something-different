@@ -1,0 +1,92 @@
+*{
+    margin: 0px; 
+    padding: 0px; 
+    font-family: 'Kiwi Maru', serif;
+}
+
+body{
+    font-family: 'Kiwi Maru', serif;
+}
+
+#clickbelowpage{  
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    text-align: center;
+    height: 100%;
+}
+
+#canvasanimate{
+    width: 600px;
+    height: 250px;
+    margin: 10px auto;
+    background-color: white;
+    position: relative;   
+    overflow: hidden;
+    padding: 4px;
+    border: 4px solid white;
+    border-radius: 10px;
+    transform: scale(0.8);
+}
+
+.wavelayer{
+    position: absolute;
+}
+
+.boat1{
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+@keyframes wave1 {
+    from{left: -30px}
+    to {left: -60px}   
+}
+@keyframes wave2 {
+    from   {left: 0px;}
+    to  {left: -180px;}  
+}
+
+@keyframes wave3 {
+    from {left: 0px}
+    to {left: -180px}
+}
+
+@keyframes wave4 {
+    from {left: 0px}
+    to {left: -195px}
+}
+
+@keyframes boat1 {
+    from {transform: rotate(10deg); margin-top: 0px;}
+    to {transform: rotate(-10deg); margin-top: 30px;}
+}
+
+#pressbutton{
+    position: relative;
+    height: max-content ;
+    width: 100%;
+    margin: 30px auto 0 auto;
+    bottom: 0;
+}
+
+#downbutton{
+    filter:blur(2px);
+    transition-duration: .2s;
+}
+
+#downbuttondiv:hover #downbutton{
+    filter:blur(0);
+    animation: buttondown 1s infinite alternate-reverse ease;
+}
+
+@keyframes buttondown {
+    from {margin-top: 90px;}
+    to   {margin-top: 0px;}
+}
+
+.out{
+    text-align: center;
+    font-size: 3000%;
+} 
