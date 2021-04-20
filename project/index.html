@@ -18,24 +18,24 @@
             <img src="images/wave1.png" id="wave2" class="wavelayer" style="margin-top: 115px; z-index: 2; left: -40px; filter: brightness(100%); animation: wave2 10s infinite alternate linear;">
             <img src="images/wave1.png" id="wave3" class="wavelayer" style="margin-top: 140px; z-index: 3; left: 0px; filter: brightness(80%); animation: wave3 6s infinite alternate linear;">
             <img src="images/wave1.png" id="wave4" class="wavelayer" style="margin-top: 180px; z-index: 4; left: -60px; filter: brightness(50%); animation: wave4 4s infinite alternate-reverse linear;">
-            <img src="images/boat1.png" id="boat1" class="boat1" style="margin-top: 20px; animation: boat1 2s infinite alternate linear;"> 
+            <img src="images/boat1.png" id="boat1" class="boat1" style="margin-top: 20px; animation: boat1 4s infinite linear;"> 
         </div>
         
-        <text id="word" style="position: relative; margin: 5px 500px;" >Click the below button</text>
+        <text id="word" style=" width: 100%;" >Click the below button</text>
         
-        <div id="downbuttondiv" onload="boatFloat()" style="height: 90px; margin: 20px 500px auto 500px;">
+        <div id="downbuttondiv" onclick="downclick()" style="height: 90px; margin: 20px;">
             <img src="images/downarrow.png" height="35" id="downbutton">
         </div>
 
         <!--This the audio for the ocean wave animation-->
-        <audio controls autoplay="autoplay" loop="infinite" id="oceanAudio" style="display: none;">
+        <audio controls autoplay="autoplay" loop id="oceanAudio" style="display: none;">
             <source src="sounds/ocean-wave-1.mp3" type="audio/mpeg">
         </audio>
 
-        <!--This the audio for the button animation (id="downbutton") -->
-        <audio controls id="buttonhover" style="display: none;">
+        <!--This the audio for the button animation (id="downbutton") >
+        <audio controls id="buttonhover" style="display: none;" >
             <source src="sounds/button-Toggle.mp3" type="audio/mpeg">
-        </audio>
+        </audio-->
         
     </div>
 
@@ -44,7 +44,7 @@
 
     
 
-    <!--div class="zoom out in" id="word" style="display: none;">
+    <div class="zoom out in" id="word" style="position: relative; ">
         <h2>
             <text id = "word1">I</text>
             <text id = "word2">T</text>
@@ -53,7 +53,7 @@
             <text id = "word4">M</text>
             <text id = "word5">E</text>
         </h2>
-    </div-->
+    </div>
     
 </body>
 
@@ -61,27 +61,39 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    
-    
-    $(document).ready(function(){
-      $("#downbuttondiv").hover(function(){
-        buttonplay();
-        }, function(){
-        buttonpause();
-      });
-    });
 
-    function buttonplay(){
-        document.getElementById("buttonhover").play();
-    }
+    document.getElementById("oceanAudio").volume = 0.2;
+    
+        
+    
+    // $(document).ready(function(){
+    //   $("#downbuttondiv").hover(function(){
+         
+    //     }, function(){
+    //     buttonpause();
+    //   });
+    // });
 
-    function buttonpause(){
-        document.getElementById("buttonhover").pause();
-    }
+    // function buttonplay(){
+    //     document.getElementById("buttonhover").play();
+    // }
+
+    // function buttonpause(){
+    //     document.getElementById("buttonhover").pause();
+    // }
 
     function boatFloat(){
-        document.getElementById("oceanAudio").play();
+        
     }
+
+    function downclick(){
+        var temp =document.getElementById("clickbelowpage");
+        temp.style.overflow = "hidden";
+        temp.style.height = "0";
+        document.getElementById("oceanAudio").pause();
+    }
+
+    
     
     //for the future enhancement
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
